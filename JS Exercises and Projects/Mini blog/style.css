@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body{
+    background-image: url('mountains.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+}
+section{
+    border:1px solid white;
+    border-radius: 3%;
+   padding: 0.2rem 0;
+    max-width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(241, 255, 250, 0.5);
+    
+    
+}
+h1{
+    
+    font-size: 2em;
+}
+h1#post-title, h2{
+    margin-bottom: 0;
+}
+
+button{
+    font-size: 1em;
+    color:white;
+    background-color: rgb(134, 99, 124);
+    border:1px solid white;
+    padding:0.5em;
+    margin: 0 0.4em ;
+}
+button:hover{
+    background-color: rgb(75, 39, 65);
+}
+li{
+    list-style: none;
+    font-size: 1.5em;
+    margin-right: 1.5rem;
+}
+li li{
+    padding-bottom:0.5rem;
+}
+ul#post-comments{
+    margin-right: 0.7rem;
+}
