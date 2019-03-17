@@ -47,9 +47,37 @@ module.exports = {
             console.log(err)
         }
     },
-    getMyRent: async(req,res)=>{
-        let myCars = await Rent.find()
-     res.render('user/rented')
+    getMyRent: async (req, res) => {
+        try {
+            let cars = await Rent.find({
+                owner: req.user._id
+            }).populate('car')
+           
+            res.render('user/rented', { cars })
+        } catch (err) {
+            console.log(err)
+        }
+
+    },
+    getEditCar: (req, res) => {
+        Car.findById(req.params.id).then((car) => {
+            res.render('car/edit', car)
+        }
+
+        ).catch((err) => console.log(err))
+
+    },
+    postEditCar: (req, res) => {
+        Car.findById(req.params.id).then((car) => {
+            car.model = req.body.model;
+            car.image = req.body.image;
+            car.pricePerDay = req.body.pricePerDay;
+           car.save()
+           res.render('home/index')
+        }).catch((err) => console.log(err))
+
+
+
     }
 }
 
